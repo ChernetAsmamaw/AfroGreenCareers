@@ -1,2 +1,40 @@
 # AfroGreenCareers
-A web app that allows African youth to find opportunities in the conservation and sustainability sector.
+
+## Overview
+
+- Helping African youth find opportunities in the conservation and sustainability sector.
+
+## Features
+
+- 
+
+## Installation Guide
+
+- 
+
+## Usage Guide
+
+- 
+
+## Technologies Used
+
+- 
+
+## Contributions
+
+- 
+
+## Roadmap
+
+- 
+
+## License
+
+- 
+
+## Acknowledgments
+- 
+
+## Contact Information
+
+- 
