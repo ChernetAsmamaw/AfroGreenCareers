@@ -8,7 +8,7 @@
         <div class="card mx-auto" style ="width: 40rem;">
             <!-- <img src ="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
-                <h5 class="card-title mb-3">Create A Company</h5>
+                <h5 class="card-title mb-3">Company Details</h5>
 
                 <form method="POST">
                     {% csrf_token %}
@@ -18,10 +18,15 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Established Date</label>
-                        {% render_field form.estd class="form-control" %}
+                        <label for="exampleInputEmail1" class="form-label">Established Year</label>
+                        {% render_field form.est_date class="form-control" %}
                     </div>
                     
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Country</label>
+                        {% render_field form.country class="form-control" %}
+                    </div>
+
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">City</label>
                         {% render_field form.city class="form-control" %}
@@ -32,11 +37,29 @@
                         {% render_field form.state class="form-control" %}
                     </div>
 
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Street</label>
+                        {% render_field form.street class="form-control" %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Call Adress</label>
+                        {% render_field form.call_adress class="form-control" %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Our Industry</label>
+                        {% render_field form.company_industry class="form-control" %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Our Mission</label>
+                        {% render_field form.company_mission|attr:"rows:2" class="form-control" %}
+                    </div>
+
                     <button type="submit" class = "btn btn-primary">Submit</button>
                 </form>
 
-                <!-- <p class ="card-text">Some quick example text to build on the card title and make up the bulk of card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a> -->
             </div>
         </div>
     </div>

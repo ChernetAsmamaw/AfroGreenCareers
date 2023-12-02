@@ -12,14 +12,15 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'dashboard' %}">AfroGreenCareers Portal</a>
+            <a class="navbar-brand" href="{% url 'home' %}">AfroGreenCareers</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                {% if request.user.is_authenticated and request.user.is_verified %}
+                {% if request.user.is_authenticated %} <!-- and request.user.is_verified--> 
                 {% if request.user.is_applicant %}
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -27,24 +28,24 @@
                     </li>
                     {% if request.user.has_resume %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Apply to Opportunities</a>
+                        <a class="nav-link" href="{% url 'job-listing' %}">Apply</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Manage Applications</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'applied-jobs' %}">Manage Applications</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Update Resume</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'update-resume' %}">Update Resume</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Create Resume</a>
+                        <a class="nav-link" href="{% url 'update-resume' %}">Create Resume</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{request.user.email}}</a>
-                    </li>
-                    
+                    </li>    
                 </ul>
+
                 {% elif request.user.is_recruiter %}
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -52,14 +53,17 @@
                     </li>
                     {% if request.user.has_company %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Create Opportunity Posts</a>
+                        <a class="nav-link" href="{% url 'create-job' %}">Create Posts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Manage Applications</a>
+                        <a class="nav-link" href="{% url 'update-company' %}">Update Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'manage-jobs' %}">Manage Applications</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Create Company</a>
+                        <a class="nav-link" href="{% url 'update-company'%}">Create Company</a>
                     </li>
                     {% endif %}
         
@@ -68,23 +72,20 @@
                     </li>
                     
                 </ul>
+
                 {% endif %}
-                <a href="#" class="notification-link" style="margin-right: 50px;color:white">
-                    <i class="fa-sharp fa-solid fa-bell fa-xl"></i>
-                </a>
+                
                 <a href="{% url 'logout' %}"  style="margin-right: 40px;color:white;">
                     <i class="fa-sharp fa-solid fa-arrow-right-from-bracket fa-xl"></i>
                 </a>
-                <a href="#"style="margin-right: 40px;color:white;" >
-                    <i class="fa-solid fa-user-minus fa-xl"></i>
-                </a>
+                
                 {% else %}
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">All Opportunities</a>
+                        <a class="nav-link active" aria-current="page" href="#"></a>
                     </li>  
                 </ul>
-                <a href="{% url 'login' %}" class="btn btn-warning btn-sm">Log In</a> 
+                <a href="{% url 'login' %}" class="btn btn-primary btn-sm">Log In</a> 
                 {% endif %}
                 
 
