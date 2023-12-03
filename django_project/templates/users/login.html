@@ -15,8 +15,11 @@
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
     <hr class="my-4">
 
-    <small class="text-muted">Register as an Applicant <a href="{% url 'register-applicant' %}">Sign Up</a></small> <br>
-    <small class="text-muted">Register as a Recruiter <a href="{% url 'register-recruiter' %}">Sign Up</a></small>
+    <div class="row bg-light">
+        <p class="col text-muted fs-6  border p-4 text-center">I would like to register as an <b>Applicant</b> <a href="{% url 'register-applicant' %}" class="fw-bold p-2"><br>Sign Up</a></p><br>
+        <p class="col text-muted fs-6 border p-4 text-center">I would like to register as a <b>Recruiter</b> <a href="{% url 'register-recruiter' %}" class="fw-bold p-2"><br>Sign Up</a></p>
+    </div>
+
 
 
 </form>

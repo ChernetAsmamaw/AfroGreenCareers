@@ -1,6 +1,7 @@
 from django.db import models
 from users.models import User
 from company.models import Company
+from resume.models import Resume
 
 
 class Country(models.Model):
@@ -34,8 +35,37 @@ class Job(models.Model):
         ('3-Months', '3-Months'),
         ('4-Months', '4-Months'),
         ('6-Months', '6-Months'),
-        ('Contract', 'Contract'),  
+        ('Contract', 'Contract')
     )
+
+    industries = (
+        ('Education', 'Education'),
+        ('Agriculture', 'Agriculture'),
+        ('Infrastructure', 'Infrastructure'),
+        ('Engineering', 'Engineering'),
+        ('IT & Tech', 'IT & Tech'),
+        ('Engineering', 'Engineering'),
+        ('Media', 'Media'),
+        ('Business & Entrepreneurship', 'Business & Entrepreneurship'),
+        ('Art', 'Art'),
+        ('Healthcare', 'Healthcare'),
+        ('Manufacturing', 'Manufacturing'),
+        ('Logistics', 'Logistics'),
+        ('Law', 'Law'),
+        ('Other', 'Other')
+    )
+
+    countries = (
+        ('Ethiopia', 'Ethiopia'),
+        ('Rwanda', 'Rwanda'),
+        ('Kenya', 'Kenya'),
+        ('Uganda', 'Uganda'),
+        ('South Africa', 'South Afrca'),
+        ('Mauritius', 'Mauritius'),
+        ('United States', 'United States'),
+        ('Other', 'Other')      
+    )
+
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
@@ -47,8 +77,8 @@ class Job(models.Model):
     field = models.CharField(max_length=100, null=True, blank=True)
     is_avaliable = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
-    industry = models.ForeignKey(Industry, on_delete=models.DO_NOTHING, null=True, blank=True)
-    country = models.ForeignKey(Country, on_delete=models.DO_NOTHING, null=True, blank=True)
+    industry = models.CharField(max_length=50, choices=industries, null=True, blank=True)
+    country = models.CharField(max_length=50, choices=countries, null=True, blank=True)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     job_env = models.CharField(max_length=20, choices=job_env_options, null=True, blank=True)
