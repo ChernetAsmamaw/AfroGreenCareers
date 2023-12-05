@@ -26,20 +26,20 @@ The registration also has the option of registering as an applicant or a recruit
 
 To be able to run this project on your local machine, you need to have the following installed on your machine:
 - First, you need to get the source code on your local machine. To do this, you can either download the zip file or clone the repository using the following command in your terminal:
-        -````git clone https://github.com/ChernetAsmamaw/AfroGreenCareers```
+    -````git clone https://github.com/ChernetAsmamaw/AfroGreenCareers```
 - Then, you need to create a virtual environment and install the dependencies in the requirements.txt file. To do this, run the following commands in your terminal:
-        - ```python3 -m venv venv```
-        - ```source venv/bin/activate```
-        - ```pip install -r requirements.txt```
+    - ```python3 -m venv venv```
+    - ```source venv/bin/activate```
+    - ```pip install -r requirements.txt```
 - Then, you need to create a .env file in the root directory of the project and add the following environment variables:
-        - ```SECRET_KEY```
-        - ```EMAIL_HOST_USER```
-        - ```EMAIL_HOST_PASSWORD```
-        - ```DATABASE_URL```
+    - ```SECRET_KEY```
+    - ```EMAIL_HOST_USER```
+    - ```EMAIL_HOST_PASSWORD```
+    - ```DATABASE_URL```
 - Then, you need to run the following commands in your terminal to create the database and run the migrations:
-        - ```python manage.py makemigrations```
-        - ```python manage.py migrate```
+    - ```python manage.py makemigrations```
+    - ```python manage.py migrate```
 - Then, you need to create a superuser to be able to access the admin page. To do this, run the following command in your terminal:
-        - ```python manage.py createsuperuser```
+    - ```python manage.py createsuperuser```
 - Finally, you need to run the following command in your terminal to start the server:
-        - ```python manage.py runserver```
+    - ```python manage.py runserver```
