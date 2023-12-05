@@ -26,7 +26,7 @@ The registration also has the option of registering as an applicant or a recruit
 
 To be able to run this project on your local machine, you need to have the following installed on your machine:
 - First, you need to get the source code on your local machine. To do this, you can either download the zip file or clone the repository using the following command in your terminal:
-    -````git clone https://github.com/ChernetAsmamaw/AfroGreenCareers```
+    -```git clone https://github.com/ChernetAsmamaw/AfroGreenCareers```
 - Then, you need to create a virtual environment and install the dependencies in the requirements.txt file. To do this, run the following commands in your terminal:
     - ```python3 -m venv venv```
     - ```source venv/bin/activate```
