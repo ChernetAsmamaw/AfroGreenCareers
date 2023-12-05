@@ -32,8 +32,6 @@ urlpatterns = [
 ]
 
 url_patterns=[
-    ...
-
     url(r'^favicon\.ico$',RedirectView.as_view(url='./media/favicon.ico')),
 ]
 
