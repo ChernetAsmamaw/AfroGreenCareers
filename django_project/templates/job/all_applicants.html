@@ -26,7 +26,9 @@
                     <td>{{applied_job.user.resume.location}}</td>
                     <td>{{applied_job.timestamp}}</td>
                     {% if applied_job.user.resume and applied_job.user.resume.upload_resume.url %}
-                    <td><a target="_blank" href="{{applicant.user.resume.upload_resume.url}}"><small>Download Resume</small></a></td>
+                    <td><a target="_blank" href="{{applicant.user.resume.upload_resume.url}}">Download Resume
+                            <i class="fa fa-download" aria-hidden="true"></i></a>
+                    </td>
                     {% else %}
                     <td>Resume not uploaded</td>
                     {% endif %}

@@ -4,14 +4,14 @@
 {% block content %}
 
 <section>
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-            <h2 class="display-5 fw-bold">{{job.title}}</h2>
-            <p class="col-md-8 fs-5 mt-3">
+    <div class="p-5 mb-4 bg-dark rounded-3">
+        <div class="container-fluid py-2">
+            <h2 class="display-5 fw-bold  text-white ">{{job.title}}</h2>
+            <p class="col-md-8 fs-5 mt-3  text-white ">
                 {{job.country}}, {{job.state}}, {{job.city}} | {{job.job_env}} | USD{{job.salary|intcomma}}
             </p>
 
-            <p class="col-md-8 fs-10 mt-3">Application Deadline: {{job.deadline}}</p>
+            <p class="col-md-8 fs-10 mt-3  text-white ">Application Deadline: {{job.deadline}}</p>
 
             {% if user.is_authenticated and request.user.is_applicant %}
                 {% if has_applied == False %}
@@ -84,6 +84,7 @@
                 <p class="card-text">Name: {{job.company.name}}</p>
                 <p class="card-text">Main Industry: {{job.company.company_industry}}</p>
                 <p class="card-text">Location: {{job.company.street}}, {{job.company.city}}, {{job.company.state}}, {{job.company.country}}</p>
+                <p class="card-text">Mission: "<i>{{job.company.company_mission}}</i>"</p>
                 <p class="card-text">Established Year: {{job.company.est_date}}</p>
                 <p class="card-text">Contact Adress: +{{job.company.call_adress|phone2numeric}}</p>
 
