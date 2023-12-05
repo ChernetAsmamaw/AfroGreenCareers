@@ -11,7 +11,7 @@
 /bin/
 /build/
 /out/
-
+/lib/
 # Ignore package manager directories
 /node_modules/
 /packages/
