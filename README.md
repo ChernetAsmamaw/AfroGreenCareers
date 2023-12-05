@@ -27,15 +27,13 @@ The registration also has the option of registering as an applicant or a recruit
 To be able to run this project on your local machine, you need to have the following installed on your machine:
 - First, you need to get the source code on your local machine. To do this, you can either download the zip file or clone the repository using the following command in your terminal:
     - ```git clone https://github.com/ChernetAsmamaw/AfroGreenCareers```
-- Then, you need to create a virtual environment and install the dependencies in the requirements.txt file. To do this, run the following commands in your terminal:
-    - ```python3 -m venv venv```
-    - ```source venv/bin/activate```
+- Then, you need to create a virtual environment. Make sure to check what version of python you are running on, in my case it's 3.10. Then run the following command:
+    - ```mkvirtualenv --python=/usr/python3.10 <name_of_your_venv>```
+- Install the dependencies from the the requirements.txt file. First make sure in the django_project file to be able to perform this, then run the folloeing command: 
     - ```pip install -r requirements.txt```
-- Then, you need to create a .env file in the root directory of the project and add the following environment variables:
-    - ```SECRET_KEY```
-    - ```EMAIL_HOST_USER```
-    - ```EMAIL_HOST_PASSWORD```
-    - ```DATABASE_URL```
+- Duplicate ```django_project/django_project/settings.py``` and save as ```settings.py``` this will allow you to enter tour database settiing into ```settings.py```.Then, you need to create a .env file in the root directory of the project and add the following environment variables: 
+Enter your database settings in local_settings.py.
+    -  ```SECRET_KEY```,  ```EMAIL_HOST_USER```, ```EMAIL_HOST_PASSWORD```
 - Then, you need to run the following commands in your terminal to create the database and run the migrations:
     - ```python manage.py makemigrations```
     - ```python manage.py migrate```
